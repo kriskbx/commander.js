@@ -525,6 +525,8 @@ Command.prototype.executeSubCommand = function(argv, args, unknown) {
   // name of the subcommand, link `pm-install`
   var bin = basename(f, path.extname(f)) + '-' + args[0];
 
+  f = fs.realpathSync(f);
+
   // In case of globally installed, get the base dir where executable
   //  subcommand file should be located at
   var baseDir,
